@@ -80,7 +80,8 @@ module.exports = {
       </appInfo>
     </encodingDesc>
     <profileDesc>
-    ${langTag(node)}
+      ${langTag(node)}
+    </profileDesc>
   </teiHeader>
   <text>
     ${getFront(node)}
