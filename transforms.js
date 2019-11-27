@@ -7,8 +7,8 @@ module.exports = {
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title type="main">${node.getDocumentTitle({partition: true}).getMain()}</title>
-        <title type="sub">${node.getDocumentTitle({partition: true}).getSubtitle()}</title>
+        <title type="main">${node.getDocumentTitle({ partition: true }).getMain()}</title>
+        <title type="sub">${node.getDocumentTitle({ partition: true }).getSubtitle()}</title>
       </titleStmt>
     </fileDesc>
   </teiHeader>
