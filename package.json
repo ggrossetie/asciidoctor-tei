@@ -1,0 +1,26 @@
+{
+  "name": "asciidoctor-tei",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "pretest": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mogztter/asciidoctor-tei.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mogztter/asciidoctor-tei/issues"
+  },
+  "homepage": "https://github.com/Mogztter/asciidoctor-tei#readme",
+  "devDependencies": {
+    "@asciidoctor/core": "^2.0.3",
+    "ava": "^2.4.0",
+    "standard": "^14.3.1"
+  }
+}
