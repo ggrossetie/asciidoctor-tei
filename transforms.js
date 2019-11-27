@@ -1,5 +1,7 @@
 'use strict'
 
+const asciidoctor = require('@asciidoctor/core')()
+
 const subtitleTag = (documentTitle) => {
   if (documentTitle.hasSubtitle()) {
     return `<title type="sub">${documentTitle.getSubtitle()}</title>`
@@ -26,6 +28,13 @@ module.exports = {
         ${authorTags(authors)}
       </titleStmt>
     </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application version="${asciidoctor.getVersion()}" ident="asciidoctor">
+          <label>Asciidoctor</label>
+        </application>
+      </appInfo>
+    </encodingDesc>
   </teiHeader>
   ${node.getContent()}
 </TEI>`

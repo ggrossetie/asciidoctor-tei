@@ -27,3 +27,8 @@ test('teiHeader > titleStmt with an author', t => {
 Doc Writer <doc@example.com>`, { standalone: true, backend: 'tei' })
   t.regex(tei, /<author>[\s\n]+<name>Doc Writer<\/name>[\s\n]+<email>doc@example.com<\/email>/)
 })
+
+test('teiHeader > encodingDesc > appInfo', t => {
+  const tei = asciidoctor.convert('= Title', { standalone: true, backend: 'tei' })
+  t.regex(tei, /<application version="2.0.3" ident="asciidoctor">/)
+})
