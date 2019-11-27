@@ -2,7 +2,7 @@
 
 const transforms = require('./transforms.js')
 
-module.exports = function TEIConverter (Asciidoctor) {
+function TEIConverter (Asciidoctor) {
   class TEIConverter {
     constructor (backend, opts) {
       this.basebackend = 'xml'
@@ -23,4 +23,10 @@ module.exports = function TEIConverter (Asciidoctor) {
   }
 
   Asciidoctor.ConverterFactory.register(new TEIConverter('tei'), ['tei'])
+}
+
+module.exports = TEIConverter
+module.exports.register = function TEIConverterFactory () {
+  const asciidoctor = require('@asciidoctor/core')()
+  return TEIConverter(asciidoctor)
 }
