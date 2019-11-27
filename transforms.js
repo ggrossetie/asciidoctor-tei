@@ -48,7 +48,26 @@ module.exports = {
     <profileDesc>
     ${langTag(node)}
   </teiHeader>
-  ${node.getContent()}
+  <text>
+    ${node.getContent()}
+  </text>
 </TEI>`
+  },
+
+  preamble: ({ node }) => {
+    return `<front>
+      ${node.getContent()}
+    </front>`
+  },
+
+  paragraph: ({ node }) => {
+    return `<p>${node.getContent()}</p>`
+  },
+
+  section: ({ node }) => {
+    return `<div type="div${node.getLevel()}">
+      <head subtype="level${node.getLevel()}">${node.getTitle()}</head>
+      ${node.getContent()}
+    </div>`
   }
 }

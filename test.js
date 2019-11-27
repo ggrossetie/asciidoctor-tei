@@ -43,3 +43,26 @@ test('teiHeader > encodingDesc > langUsage with a lang attribute', t => {
 :lang: fr`, { standalone: true, backend: 'tei' })
   t.regex(tei, /<language ident="fr">fr<\/language>/)
 })
+
+test('text > front', t => {
+  const tei = asciidoctor.convert(`= Title
+:lang: fr
+
+Il était sur le dos, un dos aussi dur qu’une carapace, et, en relevant un peu
+la tête, il vit, bombé, brun, cloisonné par des arceaux plus rigides, son abdomen
+sur le haut duquel la couverture, prête à glisser tout à fait, ne tenait plus
+qu’à peine. Ses nombreuses pattes, lamentablement grêles par comparaison avec
+la corpulence qu’il avait par ailleurs, grouillaient désespérément sous ses yeux.
+
+[lang="en"]
+"Oh, God", he thought…
+
+Je remercie le site Blind Text Generator qui a fourni tout le faux-texte de ce document.
+
+== Sed lectus
+`, { standalone: true, backend: 'tei' })
+
+  t.regex(tei, /<front>[\s\n]+<p>Il était sur le dos/)
+  t.regex(tei, /<div type="div1">/)
+  t.regex(tei, /<head subtype="level1">Sed lectus<\/head>/)
+})
