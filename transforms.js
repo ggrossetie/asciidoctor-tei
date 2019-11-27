@@ -14,6 +14,16 @@ const authorTags = (authors) => authors.map(author => `<author>
   <email>${author.getEmail()}</email>
 </author>`)
 
+const langTag = (node) => {
+  if (node.hasAttribute('lang')) {
+    const lang = node.getAttribute('lang')
+    return `<langUsage>
+  <language ident="${lang}">${lang}</language>
+</langUsage>`
+  }
+  return ''
+}
+
 module.exports = {
   document: ({ node }) => {
     const documentTitle = node.getDocumentTitle({ partition: true })
@@ -35,6 +45,8 @@ module.exports = {
         </application>
       </appInfo>
     </encodingDesc>
+    <profileDesc>
+    ${langTag(node)}
   </teiHeader>
   ${node.getContent()}
 </TEI>`

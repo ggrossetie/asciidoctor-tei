@@ -32,3 +32,14 @@ test('teiHeader > encodingDesc > appInfo', t => {
   const tei = asciidoctor.convert('= Title', { standalone: true, backend: 'tei' })
   t.regex(tei, /<application version="2.0.3" ident="asciidoctor">/)
 })
+
+test('teiHeader > encodingDesc > langUsage without a lang attribute', t => {
+  const tei = asciidoctor.convert('= Title', { standalone: true, backend: 'tei' })
+  t.notRegex(tei, /<langUsage>/)
+})
+
+test('teiHeader > encodingDesc > langUsage with a lang attribute', t => {
+  const tei = asciidoctor.convert(`= Title
+:lang: fr`, { standalone: true, backend: 'tei' })
+  t.regex(tei, /<language ident="fr">fr<\/language>/)
+})
