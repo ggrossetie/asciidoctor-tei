@@ -28,23 +28,25 @@ const langTag = (node) => {
 }
 
 const getFront = (node) => {
-  const filteredBlocks = node.getBlocks().filter(block => {
-    return FRONT_CONTEXTS.includes(block.node_name)
-  })
+  const filteredBlocks = node.findBy({context: 'preamble'})
 
   if (filteredBlocks.length) {
-    return `<front>${filteredBlocks.map(block => block.getContent())}</front>`
+    return `<front>
+  ${filteredBlocks.map(block => block.convert())}
+</front>`
   }
 
   return ''
 }
+
 const getBody = (node) => {
   const filteredBlocks = node.getBlocks().filter(block => {
     return !FRONT_CONTEXTS.includes(block.node_name)
   })
 
   if (filteredBlocks.length) {
-    return `<body>${filteredBlocks.map(block => block.render())}</body>`
+    console.log('node_names', filteredBlocks.map(b => b.context))
+    return `<body>${filteredBlocks.map(block => block.convert())}</body>`
   }
 
   return ''

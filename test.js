@@ -64,7 +64,7 @@ Je remercie le site Blind Text Generator qui a fourni tout le faux-texte de ce d
 
   t.regex(tei, /<front>[\s\n]+<p>Il était sur le dos/)
   t.regex(tei, /<div xml:lang="en"><p>"Oh, God", he thought…<\/p><\/div>/)
-  t.regex(tei, /de ce document.<\/d>[\n\s]+<\/front>/)
+  t.regex(tei, /de ce document.<\/p>[\n\s]+<\/front>/)
 })
 
 test('text > body', t => {
