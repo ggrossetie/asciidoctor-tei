@@ -5,6 +5,13 @@ const FRONT_CONTEXTS = [
   'preamble'
 ]
 
+const REND_TYPES = new Map([
+  ['emphasis', 'italic'],
+  ['strong', 'bold'],
+  ['sup', 'sup'],
+  ['sub', 'sub']
+])
+
 const subtitleTag = (documentTitle) => {
   if (documentTitle.hasSubtitle()) {
     return `<title type="sub">${documentTitle.getSubtitle()}</title>`
@@ -100,5 +107,9 @@ module.exports = {
       <head subtype="level${node.getLevel()}">${node.getTitle()}</head>
       ${node.getContent()}
     </div>`
+  },
+
+  inline_quoted: ({ node }) => {
+    return `<hi rend="${REND_TYPES.get(node.getType())}">${node.getText()}</hi>`
   }
 }

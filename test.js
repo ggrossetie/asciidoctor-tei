@@ -82,3 +82,25 @@ commodo mollis, magna. Vestibulum ullamcorper mauris at ligula.
   t.regex(tei, /<div type="div1">/)
   t.regex(tei, /<head subtype="level1">Sed lectus<\/head>/)
 })
+
+test('text > body > div2', t => {
+  const tei = asciidoctor.convert(`= Title
+:lang: fr
+
+Il était sur le dos (…)
+
+== Sed lectus
+
+In auctor lobortis lacus. Quisque libero metus, condimentum nec, tempor a,
+commodo mollis, magna. Vestibulum ullamcorper mauris at ligula.
+
+=== In consectetuer turpis ut velit
+
+Nulla sit amet _est_. Praesent metus *tellus*.
+`, { standalone: true, backend: 'tei' })
+
+  t.regex(tei, /<div type="div2">/)
+  t.regex(tei, /<head subtype="level2">In consectetuer turpis ut velit<\/head>/)
+  t.regex(tei, /<hi rend="italic">est<\/hi>/)
+  t.regex(tei, /<hi rend="bold">tellus<\/hi>/)
+})
