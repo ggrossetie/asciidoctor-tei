@@ -61,7 +61,11 @@ module.exports = {
   },
 
   paragraph: ({ node }) => {
-    return `<p>${node.getContent()}</p>`
+    const content = `<p>${node.getContent()}</p>`
+    if (node.hasAttribute('lang')) {
+      return `<div xml:lang="${node.getAttribute('lang')}">${content}</div>`
+    }
+    return content
   },
 
   section: ({ node }) => {

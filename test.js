@@ -54,7 +54,7 @@ sur le haut duquel la couverture, prête à glisser tout à fait, ne tenait plus
 qu’à peine. Ses nombreuses pattes, lamentablement grêles par comparaison avec
 la corpulence qu’il avait par ailleurs, grouillaient désespérément sous ses yeux.
 
-[lang="en"]
+[lang=en]
 "Oh, God", he thought…
 
 Je remercie le site Blind Text Generator qui a fourni tout le faux-texte de ce document.
@@ -63,6 +63,7 @@ Je remercie le site Blind Text Generator qui a fourni tout le faux-texte de ce d
 `, { standalone: true, backend: 'tei' })
 
   t.regex(tei, /<front>[\s\n]+<p>Il était sur le dos/)
+  t.regex(tei, /<div xml:lang="en"><p>"Oh, God", he thought…<\/p><\/div>/)
   t.regex(tei, /<div type="div1">/)
   t.regex(tei, /<head subtype="level1">Sed lectus<\/head>/)
 })
