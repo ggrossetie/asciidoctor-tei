@@ -1,6 +1,9 @@
 'use strict'
 
 const asciidoctor = require('@asciidoctor/core')()
+const FRONT_CONTEXTS = [
+  'preamble'
+]
 
 const subtitleTag = (documentTitle) => {
   if (documentTitle.hasSubtitle()) {
@@ -21,6 +24,29 @@ const langTag = (node) => {
   <language ident="${lang}">${lang}</language>
 </langUsage>`
   }
+  return ''
+}
+
+const getFront = (node) => {
+  const filteredBlocks = node.getBlocks().filter(block => {
+    return FRONT_CONTEXTS.includes(block.node_name)
+  })
+
+  if (filteredBlocks.length) {
+    return `<front>${filteredBlocks.map(block => block.getContent())}</front>`
+  }
+
+  return ''
+}
+const getBody = (node) => {
+  const filteredBlocks = node.getBlocks().filter(block => {
+    return !FRONT_CONTEXTS.includes(block.node_name)
+  })
+
+  if (filteredBlocks.length) {
+    return `<body>${filteredBlocks.map(block => block.render())}</body>`
+  }
+
   return ''
 }
 
@@ -49,15 +75,14 @@ module.exports = {
     ${langTag(node)}
   </teiHeader>
   <text>
-    ${node.getContent()}
+    ${getFront(node)}
+    ${getBody(node)}
   </text>
 </TEI>`
   },
 
   preamble: ({ node }) => {
-    return `<front>
-      ${node.getContent()}
-    </front>`
+    return node.getContent()
   },
 
   paragraph: ({ node }) => {

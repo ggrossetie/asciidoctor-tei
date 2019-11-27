@@ -64,6 +64,21 @@ Je remercie le site Blind Text Generator qui a fourni tout le faux-texte de ce d
 
   t.regex(tei, /<front>[\s\n]+<p>Il était sur le dos/)
   t.regex(tei, /<div xml:lang="en"><p>"Oh, God", he thought…<\/p><\/div>/)
+  t.regex(tei, /de ce document.<\/d>[\n\s]+<\/front>/)
+})
+
+test('text > body', t => {
+  const tei = asciidoctor.convert(`= Title
+:lang: fr
+
+Il était sur le dos (…)
+
+== Sed lectus
+
+In auctor lobortis lacus. Quisque libero metus, condimentum nec, tempor a,
+commodo mollis, magna. Vestibulum ullamcorper mauris at ligula.
+`, { standalone: true, backend: 'tei' })
+
   t.regex(tei, /<div type="div1">/)
   t.regex(tei, /<head subtype="level1">Sed lectus<\/head>/)
 })
