@@ -112,6 +112,10 @@ module.exports = {
     return `<hi rend="${REND_TYPES.get(node.getType())}">${node.getText()}</hi>`
   },
 
+  inline_anchor: ({ node }) => {
+    return `<ref target="${node.getTarget()}">${node.getText()}</ref>`
+  },
+
   image: ({ node }) => {
     return `<p rend="figure-title">${node.getTitle()}</p>
   <p>

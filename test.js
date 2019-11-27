@@ -118,3 +118,20 @@ image::relative/path/to/image/img-1.jpg[legend=Schéma réalisé en septembre 20
   t.regex(tei, /<p rend="figure-legend">Schéma réalisé en septembre 2009<\/p>/)
   t.regex(tei, /<p rend="figure-license">Surletoit - licence Creative Commons by-nc-sa<\/p>/)
 })
+
+test('text > body > ref', t => {
+  const tei = asciidoctor.convert(`= Title
+
+== Sed lectus
+
+In enim justo, rhoncus ut, http://www.lodel.org.
+
+In enim justo, rhoncus ut, http://www.lodel.org[Lodel].
+
+In enim justo, rhoncus ut, http://www.lodel.org[*Lodel*].
+`, { standalone: true, backend: 'tei' })
+
+  t.regex(tei, /<ref target="http:\/\/www.lodel.org">http:\/\/www.lodel.org<\/ref>/)
+  t.regex(tei, /<ref target="http:\/\/www.lodel.org">Lodel<\/ref>/)
+  t.regex(tei, /<ref target="http:\/\/www.lodel.org"><hi rend="bold">Lodel<\/hi><\/ref>/)
+})
