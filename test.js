@@ -104,3 +104,17 @@ Nulla sit amet _est_. Praesent metus *tellus*.
   t.regex(tei, /<hi rend="italic">est<\/hi>/)
   t.regex(tei, /<hi rend="bold">tellus<\/hi>/)
 })
+
+test('text > body > figure', t => {
+  const tei = asciidoctor.convert(`= Title
+
+== Sed lectus
+
+.Fonctionnement d'Opentext
+image::relative/path/to/image/img-1.jpg[legend=Schéma réalisé en septembre 2009,license=Surletoit - licence Creative Commons by-nc-sa]`, { standalone: true, backend: 'tei' })
+
+  t.regex(tei, /<p rend="figure-title">Fonctionnement d&#8217;Opentext<\/p>/)
+  t.regex(tei, /<graphic url="relative\/path\/to\/image\/img-1.jpg" \/>/)
+  t.regex(tei, /<p rend="figure-legend">Schéma réalisé en septembre 2009<\/p>/)
+  t.regex(tei, /<p rend="figure-license">Surletoit - licence Creative Commons by-nc-sa<\/p>/)
+})

@@ -35,7 +35,7 @@ const langTag = (node) => {
 }
 
 const getFront = (node) => {
-  const filteredBlocks = node.findBy({context: 'preamble'})
+  const filteredBlocks = node.findBy({ context: 'preamble' })
 
   if (filteredBlocks.length) {
     return `<front>
@@ -52,7 +52,6 @@ const getBody = (node) => {
   })
 
   if (filteredBlocks.length) {
-    console.log('node_names', filteredBlocks.map(b => b.context))
     return `<body>${filteredBlocks.map(block => block.convert())}</body>`
   }
 
@@ -111,5 +110,16 @@ module.exports = {
 
   inline_quoted: ({ node }) => {
     return `<hi rend="${REND_TYPES.get(node.getType())}">${node.getText()}</hi>`
+  },
+
+  image: ({ node }) => {
+    return `<p rend="figure-title">${node.getTitle()}</p>
+  <p>
+    <figure>
+      <graphic url="${node.getAttribute('target')}" />
+    </figure>
+  </p>
+  <p rend="figure-legend">${node.getAttribute('legend')}</p>
+  <p rend="figure-license">${node.getAttribute('license')}</p>`
   }
 }
