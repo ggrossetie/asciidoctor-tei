@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://lodel.org/ns/tei.openedition.1.5.2/tei.openedition.1.5.2.xsd">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Lorem ipsum pour Lodel 1.0</title>
+        <title type="sub">Basé sur le modèle éditorial pour Lodel d&#8217;OpenEdition Journals</title>
+        <author>
+  <name>Marin Dacos</name>
+  <email>contact@revues.org</email>
+</author>
+      </titleStmt>
+    </fileDesc>
+    <encodingDesc>
+      <appInfo>
+        <application version="2.0.3" ident="asciidoctor">
+          <label>Asciidoctor</label>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <profileDesc>
+    <langUsage>
+  <language ident="fr">fr</language>
+</langUsage>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <front>
+  <p>Il était sur le dos, un dos aussi dur qu’une carapace, et, en relevant un peu la tête, il vit, bombé, brun, cloisonné par des arceaux plus rigides, son abdomen sur le haut duquel la couverture, prête à glisser tout à fait, ne tenait plus qu’à peine. Ses nombreuses pattes, lamentablement grêles par comparaison avec la corpulence qu’il avait par ailleurs, grouillaient désespérément sous ses yeux. « Qu’est-ce qui m’est arrivé ? » pensa-t-il. Ce n’était pas un rêve. Sa chambre, une vraie chambre humaine, juste un peu trop petite, était là tranquille entre les quatre murs qu’il connaissait bien. Au-dessus de la table où était déballée une collection d’échantillons de tissus - Samsa était représentant de commerce - on voyait accrochée l’image qu’il avait récemment découpée dans un magazine et mise dans un joli cadre doré. Elle représentait une dame munie d’une toque et d’un boa tous les deux en fourrure et qui, assise bien droite, tendait vers le spectateur un lourd manchon de
+					fourrure où tout son avant-bras avait disparu. Le regard de Gregor se tourna ensuite vers la fenêtre, et le temps maussade - on entendait les gouttes de pluie frapper le rebord en zinc - le rendit tout mélancolique. « Et si je redormais un peu et oubliais toutes ces sottises ? » se dit-il ; mais c’était absolument irréalisable, car il avait l’habitude de dormir sur le côté droit et, dans l’état où il était à présent, il était incapable de se mettre dans cette position. En se réveillant un matin après des rêves agités, Gregor Samsa se retrouva, dans son lit, métamorphosé en un monstrueux insecte. Il était sur le dos, un dos aussi dur qu’une carapace, et, en relevant un peu la tête, il vit, bombé, brun, cloisonné par des arceaux plus rigides, son abdomen sur le haut duquel la couverture, prête à glisser tout à fait, ne tenait plus qu’à peine.</p>
+<div xml:lang="en"><p>"Oh, God", he thought, "what a strenuous career it is that I&#8217;ve chosen! Travelling day in and day out.
+Doing business like this takes much more effort than doing your own business at home, and on top of that there&#8217;s the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them. It can all go to Hell! "He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn&#8217;t know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder. He slid back into his former position. "Getting up early all the time", he thought, "it makes you stupid. You&#8217;ve got to get enough sleep. Other travelling salesmen live a life of luxury. For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts. I ought to just try that with my boss; I&#8217;d get kicked out on the spot. But who knows, maybe that would be the best thing for me. If I didn&#8217;t have my parents to think about I&#8217;d have given in my notice a long time ago, I&#8217;d have gone up to the boss and told him just what I think, tell him everything I would, let him know just what I feel. He&#8217;d fall right off his desk! And it&#8217;s a funny sort of business to be sitting up there at your desk, talking down at your subordinates from up there, especially when you have to go right up close because the boss is hard of hearing. Well, there&#8217;s still some hope; once I&#8217;ve got the money together to pay off my parents' debt to him - another five or six years I suppose - that&#8217;s definitely what I&#8217;ll do. That&#8217;s when I&#8217;ll make the big change.</p></div>
+</front>
+    <body><div type="div1">
+      <head subtype="level1">Sed lectus</head>
+      <p>In auctor lobortis lacus. Quisque libero metus, condimentum nec, tempor a,
+commodo mollis, magna. Vestibulum ullamcorper mauris at ligula.</p>
+<p>Quisque id mi. Ut tincidunt tincidunt erat. Etiam feugiat lorem non metus.
+Vestibulum dapibus nunc ac augue. Curabitur vestibulum aliquam leo. Praesent
+egestas neque eu enim. In &lt;!-- &lt;pb/&gt; -&#8594;
+hac habitasse platea dictumst. Fusce a quam. Etiam ut purus mattis mauris
+sodales aliquam. Curabitur nisi. Quisque malesuada placerat nisl.</p>
+<p rend="figure-title">Fonctionnement d&#8217;Opentext</p>
+  <p>
+    <figure>
+      <graphic url="relative/path/to/image/img-1.jpg" />
+    </figure>
+  </p>
+  <p rend="figure-legend">Schéma réalisé en septembre 2009</p>
+  <p rend="figure-license">Surletoit - licence Creative Commons by-nc-sa</p>
+<div type="div2">
+      <head subtype="level2">In consectetuer turpis ut velit</head>
+      <p>Nulla sit amet est. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus. Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo. Suspendisse feugiat. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Praesent nec nisl a purus blandit viverra. Praesent ac massa at ligula laoreet iaculis. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Fusce pharetra convallis urna. Quisque ut nisi. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Suspendisse non nisl sit amet velit hendrerit rutrum. Ut leo.</p>
+    </div>
+    </div></body>
+  </text>
+</TEI>
