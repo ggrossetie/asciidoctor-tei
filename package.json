@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "asciidoctor --require ./index.js -b tei ./docs/sample.adoc",
     "test": "ava",
     "pretest": "standard"
   },
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/Mogztter/asciidoctor-tei#readme",
   "devDependencies": {
+    "@asciidoctor/cli": "^3.0.2",
     "@asciidoctor/core": "^2.0.3",
     "ava": "^2.4.0",
     "standard": "^14.3.1"
