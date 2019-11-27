@@ -21,3 +21,9 @@ test('teiHeader > titleStmt without subtitle', t => {
   t.regex(tei, /<title type="main">Title<\/title>/)
   t.notRegex(tei, /<title type="sub">/)
 })
+
+test('teiHeader > titleStmt with an author', t => {
+  const tei = asciidoctor.convert(`= Title
+Doc Writer <doc@example.com>`, { standalone: true, backend: 'tei' })
+  t.regex(tei, /<author>[\s\n]+<name>Doc Writer<\/name>[\s\n]+<email>doc@example.com<\/email>/)
+})
