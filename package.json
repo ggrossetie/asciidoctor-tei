@@ -12,6 +12,14 @@
     "type": "git",
     "url": "git+https://github.com/Mogztter/asciidoctor-tei.git"
   },
+  "ava": {
+    "require": [
+      "./.tests.setup.js"
+    ]
+  },
+  "standard": {
+    "globals": ["DOMParser"]
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
@@ -23,6 +31,7 @@
     "@asciidoctor/cli": "^3.0.2",
     "@asciidoctor/core": "^2.0.3",
     "ava": "^2.4.0",
+    "browser-env": "^3.3.0",
     "standard": "^14.3.1"
   }
 }
