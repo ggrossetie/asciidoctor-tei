@@ -44,7 +44,7 @@ Doc Writer <doc@example.com>`)
 test('teiHeader > encodingDesc > appInfo', t => {
   const tei = convert('= Title')
 
-  t.is(tei.querySelector('application').getAttribute('version'), '2.0.3')
+  t.is(tei.querySelector('application').getAttribute('version'), '2.1.0')
   t.is(tei.querySelector('application').getAttribute('ident'), 'asciidoctor')
 })
 

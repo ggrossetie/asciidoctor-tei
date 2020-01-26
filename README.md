@@ -15,6 +15,11 @@ incomplete or broken.
 ### Command line
 
 ```bash
+$ asciidoctor-tei ./docs/sample.adoc
+```
+
+**Note**: you can also use `asciidoctor` command line to run the Asciidoctor TEI converter:
+```bash
 $ asciidoctor --require asciidoctor-tei -b tei ./docs/sample.adoc
 ```
 

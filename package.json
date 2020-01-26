@@ -3,9 +3,14 @@
   "version": "1.0.0-alpha.1",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "asciidoctor-tei": "bin/asciidoctor-tei"
+  },
   "scripts": {
     "build": "asciidoctor --require ./index.js -b tei ./docs/sample.adoc",
-    "test": "ava",
+    "test:smoke": "./bin/asciidoctor-tei --version",
+    "test:js": "ava",
+    "test": "npm run test:smoke && npm run test:js",
     "pretest": "standard"
   },
   "repository": {
@@ -29,9 +34,11 @@
     "url": "https://github.com/Mogztter/asciidoctor-tei/issues"
   },
   "homepage": "https://github.com/Mogztter/asciidoctor-tei#readme",
+  "dependencies": {
+    "@asciidoctor/cli": "^3.1.0"
+  },
   "devDependencies": {
-    "@asciidoctor/cli": "^3.0.2",
-    "@asciidoctor/core": "^2.0.3",
+    "@asciidoctor/core": "^2.1.0",
     "ava": "^2.4.0",
     "browser-env": "^3.3.0",
     "standard": "^14.3.1"
